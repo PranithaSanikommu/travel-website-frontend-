@@ -352,6 +352,49 @@ header .search-bar-container label:hover {
     color: #dc2260;
 }
 
+.book {
+    position: relative;
+}
+
+.book .fa-plane {
+    position: absolute;
+    top: 40px;
+    left: -40px;
+    font-size: 30px;
+    animation: fly-plane 8s linear infinite;
+    color: #dc2260;
+}
+
+@keyframes fly-plane {
+
+    0% {
+        left: 0%;
+        top: 0px;
+    }
+
+    25% {
+        left: 25%;
+        top: 180px;
+    }
+
+    50% {
+        left: 50%;
+        top: 100px;
+    }
+
+    75% {
+        left: 75%;
+        top: 100px;
+    }
+
+    100% {
+        left: calc(100% + 50px);
+        top: 50px;
+    }
+}
+
+
+
 .packages .box-container {
     display: flex;
     flex-wrap: wrap;
