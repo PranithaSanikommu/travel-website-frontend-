@@ -7,9 +7,6 @@ let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 let videoBtn = document.querySelectorAll('.vid-btn');
 
-
-
-
 window.onscroll = () => {
     searchBtn.classList.remove('fa-times');
     searchBar.classList.remove('active');
@@ -17,8 +14,6 @@ window.onscroll = () => {
     navbar.classList.remove('active');
     loginForm.classList.remove('active');
 }
-
-
 
 menu.addEventListener('click', () => {
     menu.classList.toggle('fa-times');
@@ -41,7 +36,6 @@ videoBtn.forEach(btn => {
         btn.classList.add('active');
         let src = btn.getAttribute('data-src');
         document.querySelector('#videos').src = src;
-
     });
 });
 var swiper = new Swiper(".review-slider", {
@@ -92,3 +86,25 @@ var swiper = new Swiper(".brand-slider", {
         clickable: true,
     },
 });
+
+// Flying plane animation
+document.addEventListener('DOMContentLoaded', () => {
+    const plane = document.querySelector('.book .fa-plane');
+    const bookSection = document.querySelector('#book');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                plane.style.animationPlayState = 'running';
+            } else {
+                plane.style.animationPlayState = 'paused';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    observer.observe(bookSection);
+});
+
+   
